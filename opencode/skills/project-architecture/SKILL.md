@@ -9,6 +9,9 @@ al revisar código existente para asegurar que respeten la estructura existente.
 # Arquitectura del proyecto        
 Arquitectura limpia (Clean Architecture) con separación de capas y principios SOLID. La idea es mantener la lógica de negocio independiente de frameworks, librerías o detalles de infraestructura, permitiendo que la aplicación sea más mantenible, testeable y escalable.          
 
+## Convenciones
+Para las reglas de nomenclatura y organización de archivos, consulta [conventions.md](conventions.md).
+
 ## Estructura de carpetas
 relevo/server/
 ├── src/
