@@ -18,4 +18,5 @@ async def login_user(data: Annotated[OAuth2PasswordRequestForm, Depends()]):
 async def register_user(data: RegisterRequest) -> RegisterResponse:
 
     hashed_password = ""
+
     pass
