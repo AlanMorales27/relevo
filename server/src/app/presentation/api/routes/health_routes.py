@@ -1,6 +1,6 @@
 import logging
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 
@@ -18,4 +18,4 @@ def health_check(db: Session = Depends(get_data_base)):
         return {"status": "ok"}
     except Exception as error:
         logging.error("Health check failed: %s", error)
-        return {"status": "error"}
+        raise HTTPException(status_code=503, detail="Database unavailable")
