@@ -28,11 +28,11 @@ class AuditableMixin:
     """
     created_at: Mapped[DateTime] = mapped_column(
         DateTime(timezone = True), 
-        default=datetime.utcnow
+        default=datetime.timezone.utc
     )
     
     updated_at: Mapped[DateTime] = mapped_column(
         DateTime(timezone =True),
-        default=datetime.utcnow,
-        onupdate=datetime.utcnow
+        default=datetime.timezone.utc,
+        onupdate=datetime.timezone.utc
     )
