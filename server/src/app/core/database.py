@@ -12,7 +12,7 @@ def get_data_base():
     try:
         yield data_base
     except Exception as error:
-        data_base.rollBack(error)
+        data_base.rollback()
         logging.error(
             "Error en la conexión con la Db ",
             error

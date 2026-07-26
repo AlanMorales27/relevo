@@ -4,7 +4,7 @@ from fastapi import APIRouter
 from fastapi.params import Depends
 from fastapi.security import OAuth2PasswordRequestForm
 
-from server.src.app.presentation.schemas import RegisterRequest, RegisterResponse
+from ...schemas import RegisterRequest, RegisterResponse
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
