@@ -3,10 +3,15 @@
 Este documento define las convenciones de organización y nomenclatura que deben seguirse al crear o modificar archivos del proyecto. Su propósito es mantener la estructura consistente, facilitar el mantenimiento del código y alinearse con la arquitectura establecida.
 
 ## Convenciones de nombres de archivos
-- Los archivos que contienen definiciones de rutas o endpoints deben nombrarse con el sufijo `routes.py`.
-- En este proyecto, los archivos de ruta deben seguir el patrón `nombre_routes.py`.
 - Los nombres deben escribirse en minúsculas y, cuando sea necesario, separar palabras con guiones bajos.
 - El nombre del archivo debe reflejar de forma clara la responsabilidad que cumple dentro del módulo.
+
+### Sufijos por tipo de archivo
+- **Rutas**: `*_routes.py` (ej: `auth_routes.py`, `health_routes.py`)
+- **Modelos de BD**: `*_model.py` (ej: `user_model.py`, `product_model.py`)
+- **Schemas Pydantic**: `*_schemas.py` (ej: `auth_schemas.py`, `user_schemas.py`)
+- **Entidades de dominio**: sin sufijo (ej: `user.py`, `product.py`)
+- **Excepciones de dominio**: `*_error.py` (ej: `user_not_found_error.py`)
 
 ## Convenciones de nomenclatura general
 - Todos los nombres del proyecto deben escribirse en inglés, incluyendo archivos, carpetas, variables, constantes, funciones, clases, métodos, enums, interfaces y demás símbolos.
