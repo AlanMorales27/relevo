@@ -1,9 +1,12 @@
 from typing import Annotated
 
-from fastapi import APIRouter
-from fastapi.params import Depends
+from fastapi import APIRouter, Depends
 from fastapi.security import OAuth2PasswordRequestForm
+from sqlalchemy.orm import Session
 
+from server.src.app.application import RegisterUserUseCase
+from server.src.app.core.database import get_data_base, UserSQLAlchemyRepository
+from server.src.app.infrastructure.security import BcryptPasswordHasher
 from ...schemas import RegisterRequest, RegisterResponse
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -15,8 +18,10 @@ async def login_user(data: Annotated[OAuth2PasswordRequestForm, Depends()]):
 
 
 @router.post("/register", response_model=RegisterResponse)
-async def register_user(data: RegisterRequest) -> RegisterResponse:
+def register_user(data: RegisterRequest, db: Session = Depends(get_data_base)):
+    use_case = RegisterUserUseCase(
+        user_repository = UserSQLAlchemyRepository(db),
+        password_hasher = BcryptPasswordHasher()
+    )
 
-    hashed_password = ""
-
-    pass
+    return use_case.execute(data)
