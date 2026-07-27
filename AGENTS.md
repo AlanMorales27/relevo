@@ -31,4 +31,5 @@ uvicorn src.app.main:app --reload
 - New routes go in `presentation/api/routes/` and get registered in `presentation/api/router.py`.
 - New schemas go in `presentation/schemas/` and get re-exported in `__init__.py`.
 - Use relative imports within `src/app` (e.g., `from ...core.config import settings`).
+- Always import from barrels (`__init__.py`) instead of individual files when the package re-exports the symbol.
 - The project uses Spanish in a few places (`get_data_base`, error messages) — keep naming consistent with existing code.

@@ -23,7 +23,7 @@ server/src/app/
 ├── application/            # use cases orchestrate business
 │   ├── use_cases/
 │   ├── interfaces/         # contracts implemented by infrastructure
-│   │   ├── repositories/
+│   │   ├── repositories/   # interfaces for data access
 │   │   └── services/
 │   └── dto/
 ├── infrastructure/         # concrete implementations
